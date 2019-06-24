@@ -1,0 +1,39 @@
+<a class="list-group-item">
+    <table class="table table-sm">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <th style="width:135px">Do rejonu</th>
+                <th>Dystans</th>
+                <th style="width:49px">Liczba rodzin</th>
+                <th>Status</th>
+                <th>Akcje</th>
+            </tr>
+            <tr>
+                <td>{{rotation.idDestinationWarehous}}</td>
+                <td style="width:135px">{{rotation.DestinationWarehousName}}</td> 
+                <td>{{ distString }}</td>
+                <td style="width:49px">{{rotation.amount}}</td>
+                <td>{{status}}</td>
+                <td>
+                    <button class="btn btn-success" (click)="onShow()" style="display: inline-block; margin-left: 3px">Mapa</button>
+                    <button class="btn btn-success" (click)="onAccept()" *ngIf="display()" style="display: inline-block; margin-left: 3px">Zatwierdź</button>
+                    <button class="btn btn-danger" (click)="onDiscard()" *ngIf="display()" style="display: inline-block; margin-left: 3px">Odrzuć</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="show()">
+        <button class="btn btn-success" (click)="onClose()">Zamknij</button>
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="z">
+            <agm-marker [latitude]="lat1" [longitude]="lng1"></agm-marker>
+            <agm-marker [latitude]="lat2" [longitude]="lng2"></agm-marker>
+                <agm-polyline>
+                    <agm-polyline-point [latitude]="lat1" [longitude]="lng1">
+                    </agm-polyline-point>
+                    <agm-polyline-point [latitude]="lat2" [longitude]="lng2">
+                    </agm-polyline-point>
+                </agm-polyline>
+        </agm-map>
+    </div>
+</a>

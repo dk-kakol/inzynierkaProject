@@ -1,0 +1,33 @@
+<h1>History Component</h1>
+<div class="form-group row">
+    <label class="col-md-2 col-form-label">Filtr - status</label>
+    <div class="col-md-2">
+        <select class="form-control" [(ngModel)]="filter" style="display:inline-block">
+            <option value = "all">Wszystkie</option>
+            <option value="0">Do zatwierdzenia</option>
+            <option value="1">Zatwierdzone</option>
+            <option value="-1">Odrzucony</option>
+        </select>
+    </div>
+</div>
+
+<table class="table table-sm">
+    <tbody>
+        <tr>
+            <th class="col-md-2">Data</th>
+            <th class="col-md-1">Id magazynu</th>
+            <th class="col-md-2">Nazwa magazynu</th>
+            <th class="col-md-1">Id mag. przyjmującego</th>
+            <th class="col-md-2">Nazwa mag. przyjmującego</th>
+            <th class="col-md-1">Ilość rodzin</th>
+            <th class="col-md-2">Status</th>
+            <th class="col-md-1">Usuń</th>
+        </tr>
+    </tbody>
+</table>
+<app-history-item
+    [filtr] = "filter"
+    [item] = "rotation"
+    *ngFor = "let rotation of rotations"></app-history-item>
+
+

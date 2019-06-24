@@ -1,0 +1,14 @@
+<table class="table table-sm" *ngIf="display()">
+    <tbody>
+        <tr>
+            <td class="col-md-2">{{data}}</td>
+            <td class="col-md-1">{{item.idOriginWarehous}}</td>
+            <td class="col-md-2">{{item.OriginWarehousName}}</td>
+            <td class="col-md-1">{{item.idDestinationWarehous}}</td>
+            <td class="col-md-2">{{item.DestinationWarehousName}}</td>
+            <td class="col-md-1">{{item.amount}}</td>
+            <td class="col-md-2">{{status}}</td>
+            <td class="col-md-1"><a (click)="onDelete()">Usuń</a></td>
+        </tr>
+    </tbody>
+</table>

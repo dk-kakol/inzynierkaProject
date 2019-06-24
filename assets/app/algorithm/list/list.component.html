@@ -1,0 +1,18 @@
+<table class="table table-sm">
+    <tbody>
+        <tr>
+            <th class="col-md-1">Id</th>
+            <th class="col-md-3">Nazwa</th>
+            <th class="col-md-2">Współrzędne</th>
+            <th class="col-md-1">Liczba rodzin</th>
+            <th class="col-md-1">Dodatkowe rodziny</th>
+            <th class="col-md-1">Ilość mieszkańców</th>
+            <th class="col-md-1">Tempo</th>
+            <th class="col-md-1">Usuń</th>
+        </tr>
+    </tbody>
+</table>
+<app-list-item 
+[item] = "item"
+*ngFor="let item of warehouses; let j = index"></app-list-item>
+

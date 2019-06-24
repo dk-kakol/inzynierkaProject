@@ -1,0 +1,13 @@
+.item1 {
+    display: inline-block;
+    width: 10%;
+
+}
+.item2 {
+    display: inline-block;
+    width: 30%;
+}
+
+table {
+    font-size: 11px;
+}

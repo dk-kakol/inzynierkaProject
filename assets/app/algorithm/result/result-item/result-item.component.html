@@ -1,0 +1,36 @@
+<a class="list-group-item">
+    <div class="list-group-item">
+        <div style="display: inline-block; width: 40%; vertical-align: top">
+            <table class="table table-sm">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nazwa Rejonu</th>
+                        <th>Liczba rodzin</th>
+                        <th>L. dod. rodzin</th>
+                        <th>Wielkość</th>
+                        <th>Tempo</th>
+                        <th>Wsk</th>
+                        <th>Nowy wsk.</th>
+                    </tr>
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.numFamily }}</td>
+                        <td>{{ item.numExtraFamily }}</td>
+                        <td>{{ item.clients }}</td>
+                        <td>{{ item.tempo }}</td>
+                        <td>{{ item.rate }}</td>
+                        <td>{{ item.suggestionRate }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="display: inline-block; width: 59%">
+            <app-rotation-item 
+                [rotation] = "rot"
+                *ngFor="let rot of itemRotations; let j = index"></app-rotation-item>
+                <div class="list-group-item" *ngIf="itemRotations.length === 0">Brak rejonów</div>
+        </div>
+    </div>
+</a>

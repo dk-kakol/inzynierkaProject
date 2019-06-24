@@ -1,0 +1,11 @@
+.item {
+    display: inline-block;
+    width: 10%;
+}
+agm-map {
+    height: 300px;
+}
+
+table {
+    font-size: 11px;
+}

@@ -1,0 +1,37 @@
+<h1>Wczytaj Dane</h1>
+<hr>
+<div class="row">
+    <div class="col-md-6 my-input-data">
+        <h4>I. Wczytaj dane magazynów</h4>
+        <input 
+            style="display:none"
+            type="file"  
+            (change)="onUpload($event)"
+            #fileInput
+            accept=".csv">
+        <button class="btn btn-success" (click)="fileInput.click()">Importuj</button>
+        <button class="btn btn-success" (click)="onNewWarehous()">Dodaj magazyn</button>
+    </div>
+    <div class="col-md-6 my-input-data" style="border-left: solid 1px #eee">
+        <h4>II. Wczytaj rozpatrywany okres</h4>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="form-group">
+                <label for="period">Okres</label>
+                <input 
+                    type="number" 
+                    id="period" 
+                    class="form-control" 
+                    [ngModel]="period"
+                    name="period"
+                    required>
+            </div>
+            <button class="btn btn-success" type="submit">{{ getName() }}</button>
+        </form>
+    </div>
+</div>
+<hr>
+<div>
+        <button class="btn btn-success" style="width: 100%" (click)="onCalculate()" [disabled]="!checkData()">Oblicz</button>
+</div>
+<router-outlet></router-outlet>
+<app-list></app-list>

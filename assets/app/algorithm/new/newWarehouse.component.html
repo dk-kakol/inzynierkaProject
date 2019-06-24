@@ -1,0 +1,89 @@
+<div class="col-md8 col-md-offset-2" *ngIf="show">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row">
+            <div class="col-sm-5 form-group">
+                <label for="id">ID</label>
+                <input 
+                    type='number' 
+                    id="id" 
+                    class="form-control"
+                    ngModel
+                    name="id"
+                    required>
+            </div>
+            <div class="col-sm-5 form-group">
+                <label name="name>">Nazwa</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    class="form-control"
+                    name="name"
+                    ngModel
+                    required> 
+            </div>
+            <div class="col-sm-5 form-group">
+                <label for="coordinatelat">Szerokość Geograficzna</label>
+                <input 
+                    type='number' 
+                    id="coordinatelat" 
+                    class="form-control"
+                    name="coordinatelat"
+                    ngModel
+                    required>
+            </div>
+            <div class="col-sm-5 form-group">
+                <label for="coordinatelon">Długość geograficzna</label>
+                <input 
+                    type='number' 
+                    id="coordinatelon" 
+                    class="form-control"
+                    name="coordinatelon"
+                    ngModel
+                    required>
+            </div>
+            <div class="col-sm-5 form-group">
+                <label for="numFamily">Liczba rodzin</label>
+                <input 
+                    type='number' 
+                    id="numFamily" 
+                    class="form-control"
+                    name="numFamily"
+                    ngModel
+                    required>
+            </div>
+            <div class="col-sm-5 form-group">
+                <label for="numExtraFamily">Dodatkowe rodziny</label>
+                <input 
+                    type='number' 
+                    id="numExtraFamily" 
+                    class="form-control"
+                    name="numExtraFamily"
+                    ngModel
+                    required>
+            </div>
+            <div class="col-sm-5 form-group">
+                <label for="clients">Ilość mieszkańców</label>
+                <input 
+                    type='number' 
+                    id="clients" 
+                    class="form-control"
+                    name="clients"
+                    ngModel
+                    required>
+            </div>
+            <div class="col-sm-5 form-group">
+                <label for="tempo">Tempo</label>
+                <input 
+                    type='number' 
+                    id="tempo" 
+                    class="form-control"
+                    name="tempo"
+                    ngModel
+                    required>
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit" [disabled]="!f.valid">Zapisz</button>
+        <button class="btn btn-success"  (click)="onCancel()">Anuluj</button>
+    </form>
+    <hr>
+</div>
